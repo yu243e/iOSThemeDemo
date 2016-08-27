@@ -7,8 +7,6 @@
 //
 #import "ThemeManager.h"
 
-static ThemeManager *_themeManager = nil;
-
 @interface ThemeManager()
 
 @property (nonatomic, copy) NSString *themeName;
@@ -18,6 +16,8 @@ static ThemeManager *_themeManager = nil;
 @implementation ThemeManager
 
 + (ThemeManager *)sharedManager {
+    static ThemeManager *_themeManager;
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _themeManager = [[ThemeManager alloc]init];

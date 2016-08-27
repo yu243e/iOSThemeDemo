@@ -26,7 +26,7 @@
     self.title = @"ThemeDemo by yu243e";
     
     [self.view addSubview:self.customView];
-    [[ThemeManager sharedManager] configureThemeWithNamed:@"girl"];
+    [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
     
     [self setupConstraintsForSubviews];
     [self configureTheme];
