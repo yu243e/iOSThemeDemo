@@ -61,7 +61,7 @@
    
 }
 
-#pragma mark - public method
+#pragma mark - public methods
 - (void)configureTheme {
     self.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
     
@@ -73,7 +73,7 @@
     [self.changeThemeButton setBackgroundImage:[UIImage themedImageWithNamed:@"color/primary_darker"] forState:UIControlStateNormal];
 }
 
-#pragma mark - event action
+#pragma mark - event response
 - (void)changeThemeButtonClick {
     [self.delegate changeThemeButtonClick];
 }

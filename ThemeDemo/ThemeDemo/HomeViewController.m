@@ -48,7 +48,7 @@
     [self.customView configureTheme];
 }
 
-#pragma mark event action
+#pragma mark - CustomViewDelegate
 - (void)changeThemeButtonClick {
     if ([[[ThemeManager sharedManager] currentThemeName] isEqualToString:@"girl"]) {
         [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
