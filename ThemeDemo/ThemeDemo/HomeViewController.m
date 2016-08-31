@@ -43,9 +43,23 @@
     }];
 }
 
+#pragma mark - private methods
 - (void)configureTheme {
     self.view.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_lighter"];
     [self.customView configureTheme];
+}
+
+- (void)captureScreenAndFade {
+    UIView *captureScreen = [self.view snapshotViewAfterScreenUpdates:NO];
+    captureScreen.frame = self.view.frame;
+    [self.view addSubview:captureScreen];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        captureScreen.alpha = 0.0;
+        
+    } completion:^(BOOL finished) {
+        [captureScreen removeFromSuperview];
+    }];
 }
 
 #pragma mark - CustomViewDelegate
@@ -55,6 +69,7 @@
     } else {
         [[ThemeManager sharedManager] configureThemeWithNamed:@"girl"];
     }
+    [self captureScreenAndFade];
     [self configureTheme];
 }
 
